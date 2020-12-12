@@ -46,60 +46,23 @@ const solarSystem = [
     }
 ]
 
-const planetPicker = () => {
-    let i = Math.floor(Math.random() * 9);
-    return solarSystem[i].name;
+const indexPicker = () => {
+    let i = Math.floor(Math.random() * solarSystem.length);
+    return i;
 }
-const planet = planetPicker();
+const planetIndex = indexPicker();
 
-
-const planetIndexFinder = (plt) => {
-    let p;
-    switch (plt) {
-        case 'Mercury':
-            p = 0;
-            break;
-        case 'Venus':
-            p = 1;
-            break;
-        case 'Earth':
-            p = 2;
-            break;
-        case 'Mars':
-            p = 3;
-            break;
-        case 'Jupiter':
-            p = 4;
-            break;
-        case 'Saturn':
-            p = 5;
-            break;
-        case 'Uranus':
-            p = 6;
-            break;
-        case 'Neptune':
-            p = 7;
-            break;
-        case 'Pluto':
-            p = 8;
-            break;
-    }
-    return p;
-}
-const planetIndex = planetIndexFinder(planet);
-
+const planet = solarSystem[planetIndex].name;
 
 const satPicker = (p) => {
-    let satLen = solarSystem[p].sat.length;
-    let i = Math.floor(Math.random() * satLen);
+    let i = Math.floor(Math.random() * solarSystem[p].sat.length);
     return solarSystem[p].sat[i];
 }
 const sat = satPicker(planetIndex);
 
 
 const funFact = (p) => {
-    let factLen = solarSystem[p].fact.length;
-    let i = Math.floor(Math.random() * factLen);
+    let i = Math.floor(Math.random() * solarSystem[p].fact.length);
     return solarSystem[p].fact[i];
 }
 const fact = funFact(planetIndex);

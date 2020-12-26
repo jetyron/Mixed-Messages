@@ -50,23 +50,8 @@ const solarSystem = [
 const randomizer = (p) => {
     return Math.floor(Math.random() * p);
 };
-/*
-//for consistency across next 3 variables
-const planetIndex = randomizer(solarSystem.length);
 
-//random planet is selected
-const planet = solarSystem[planetIndex].name;
-
-//a random satellite orbiting the planet is selected
-const sat = solarSystem[planetIndex].sat[randomizer(solarSystem[planetIndex].sat.length)];
-
-//and a random fact about the planet is selected
-const fact = solarSystem[planetIndex].fact[randomizer(solarSystem[planetIndex].fact.length)];
-
-//prints completed "Mixed Message" 
-console.log(`The planet ${planet}, which is orbited by ${sat}, ${fact}.`);
-*/
-
+//generates message 
 const messageMaker = () => {
     //for consistency across next 3 variables
     const planetIndex = randomizer(solarSystem.length);
@@ -80,7 +65,6 @@ const messageMaker = () => {
     //and a random fact about the planet is selected
     const fact = solarSystem[planetIndex].fact[randomizer(solarSystem[planetIndex].fact.length)];
 
-    //prints completed "Mixed Message" 
-    //console.log(`The planet ${planet}, which is orbited by ${sat}, ${fact}.`);
+    //adds completed "Mixed Message" to html file
     document.getElementById("planetMessage").innerHTML = `The planet ${planet}, which is orbited by ${sat}, ${fact}.`;
 }

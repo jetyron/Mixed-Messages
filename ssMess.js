@@ -45,29 +45,23 @@ const solarSystem = [
         fact: ['is still a planet in my heart','has been reclassed as a planetoid',"does't care about what you think"]
     }
 ]
-//produces random index number for solar syatem array
-const indexPicker = () => {
-    let i = Math.floor(Math.random() * solarSystem.length);
-    return i;
-}
-const planetIndex = indexPicker();
 
-//random planet selected
+//will select random components for sentence
+const randomizer = (p) => {
+    return Math.floor(Math.random() * p);
+};
+
+//for consistency across next 3 variables
+const planetIndex = randomizer(solarSystem.length);
+
+//random planet is selected
 const planet = solarSystem[planetIndex].name;
 
-//selects a random satellite based on planet selected
-const satPicker = (p) => {
-    let i = Math.floor(Math.random() * solarSystem[p].sat.length);
-    return solarSystem[p].sat[i];
-}
-const sat = satPicker(planetIndex);
+//a random satellite orbiting the planet is selected
+const sat = solarSystem[planetIndex].sat[randomizer(solarSystem[planetIndex].sat.length)];
 
-//selects random fact based on planet selected
-const funFact = (p) => {
-    let i = Math.floor(Math.random() * solarSystem[p].fact.length);
-    return solarSystem[p].fact[i];
-}
-const fact = funFact(planetIndex);
+//and a random fact about the planet is selected
+const fact = solarSystem[planetIndex].fact[randomizer(solarSystem[planetIndex].fact.length)];
 
-//sentence is formatted and logged
+//prints completed "Mixed Message" 
 console.log(`The planet ${planet}, which is orbited by ${sat}, ${fact}.`);

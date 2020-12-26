@@ -67,4 +67,35 @@ const messageMaker = () => {
 
     //adds completed "Mixed Message" to html file
     document.getElementById("planetMessage").innerHTML = `The planet ${planet}, which is orbited by ${sat}, ${fact}.`;
+
+    //changes background image to match planet
+    switch (planet) {
+        case 'Mercury':
+            document.getElementById("BG").style.backgroundImage = "url(images/mercury.jpg)";
+            break;
+        case 'Venus':
+            document.getElementById("BG").style.backgroundImage = "url(images/venus.jpg)";
+            break;
+        case 'Earth':
+            document.getElementById("BG").style.backgroundImage = "url(images/earth.jpg)";
+            break;
+        case 'Mars':
+            document.getElementById("BG").style.backgroundImage = "url(images/mars.jpg)";
+            break;
+        case 'Jupiter':
+            document.getElementById("BG").style.backgroundImage = "url(images/jupiter.jpg)";
+            break;
+        case 'Saturn':
+            document.getElementById("BG").style.backgroundImage = "url(images/saturn.jpg)";
+            break;
+        case 'Uranus':
+            document.getElementById("BG").style.backgroundImage = "url(images/uranus.jpg)";
+            break;
+        case 'Neptune':
+            document.getElementById("BG").style.backgroundImage = "url(images/neptune.jpg)";
+            break;
+        case 'Pluto':
+            document.getElementById("BG").style.backgroundImage = "url(images/pluto.jpg)";
+            break;
+    }
 }

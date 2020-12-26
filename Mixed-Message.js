@@ -42,7 +42,7 @@ const solarSystem = [
     {
         name: 'Pluto',
         sat: ['Charon','Nix','Hydra','Kerberos','Styx'],
-        fact: ['is still a planet in my heart','has been reclassed as a planetoid',"does't care about what you think"]
+        fact: ['is still a planet in my heart','has been reclassed as a planetoid',"doesn't care about what you think"]
     }
 ]
 
